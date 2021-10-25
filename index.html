@@ -76,8 +76,7 @@
 			if (ptext != "" && etext != "") {
 				newPostRef.set(blogData, function(err){
 								if (!err){
-									//window.location.replace("http://xenon.rf.gd/me");
-									$(location).prop("href", "http://xenon.rf.gd")
+									window.location.replace("http://xenon.rf.gd/me");
 								} else {
 									$("#result").attr("class", "alert alert-danger");
 									$("#result").html("An error occuried in the upload of your post...!");
