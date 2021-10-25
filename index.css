@@ -50,3 +50,6 @@
     color: #fff;
     background: rgb(29, 77, 180);
 }
+.hr-class {
+    border: 5px solid black;
+}

