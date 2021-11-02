@@ -1,0 +1,55 @@
+* {
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+}
+.brand h2 {
+    color: rgb(25, 2, 107);
+}
+.google {
+    margin: 10px 10px 0;
+    position: relative;
+    height: 50px;
+    width: 80%;
+}
+.userlogo {
+    margin: 10px 10px 0;
+    position: relative;
+    height: 80px;
+    width: 30%;
+}
+.content{
+    /*height: 100%;*/
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+}
+.form-box{
+    width: 96%;
+    min-height: 100px;
+    position: relative;
+    margin: 2% auto;
+    background-color: aliceblue;
+    padding: 5px;
+    border-radius: 30px;
+}
+.input {
+    width: 80%;
+    height: 10px;
+    margin: 3px;
+}
+.input:focus {
+    border: 1px solid blue;
+}
+.submit {
+    width: 85%;
+    height: 40px;
+    margin: 3px;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    background: rgb(29, 77, 180);
+}
+.hr-class {
+    border: 5px solid black;
+}
