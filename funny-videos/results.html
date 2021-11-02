@@ -49,7 +49,7 @@
 
 
 	<script>
-		var dbBlogs = firebase.database().ref().child("Cracks").orderByChild("count");
+		var dbBlogs = firebase.database().ref().child("Crackz").orderByChild("count");
 		dbBlogs.on("value", function(blogs){
 			if (blogs.exists()){
 				var blogsHtml = "";
